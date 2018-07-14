@@ -1,0 +1,39 @@
+
+<h1 class="title text-center">ITS BURG TIME!!!!</h1>
+
+<h2 class="title text-center">Burgers to eat and those already eaten:</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"> 
+    <ul> Eat these!
+        {{#each burger}}
+            {{#unless devoured}}
+            <li class="uneaten" data-id="{{id}}">
+                {{burger_name}}
+            </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+        </div>
+        <div class="col-md-4"> 
+        </div>
+        <div class="col-md-4">
+    <ul> You ate these!
+        {{#each burger}}
+            {{#if devoured}}
+            <li class="eaten">
+                {{burger_name}}
+            </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+        </div>
+    </div>
+
+
+<form>
+    <label for="creation">Add a new burger!</label>
+    <input type="text" id="creation">
+    <button id="createBurger" type="submit">Submit</button>
+</form>
+</div>
